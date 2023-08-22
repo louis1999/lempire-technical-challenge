@@ -21,34 +21,68 @@ import '../imports/ui/LoginPage/LoginPage.js'
 import '../imports/ui/LoginPage/Login/Login.html'
 import '../imports/ui/LoginPage/Login/Login.css'
 import '../imports/ui/LoginPage/Login/Login.js'
+import '../imports/ui/Layout/MainLayout.html'
+// import '../imports/ui/Layout/MainLayout.js'
+import '../imports/ui/Layout/Navbar/Navbar.html'
+import '../imports/ui/Layout/Navbar/Navbar.css'
+import '../imports/ui/Layout/Navbar/Navbar.js'
 // if we want to display App.html
 // import '../imports/ui/App.js';
 
 
 
-
-
-
 FlowRouter.route('/', {
-    name: 'index',
-    action() {
-      BlazeLayout.render('mainContainer', {});
-    }
+  name: 'index',
+  action() {
+    BlazeLayout.render('mainLayout', {
+      navbar: 'navbarLayout', 
+      mainContent: 'mainContainer' 
+    });
+  }
 });
 
 FlowRouter.route('/exports', {
-    name: 'exports',
-    action() {
-      BlazeLayout.render('exportsContainer', {});
-    }
+  name: 'exports',
+  action() {
+    BlazeLayout.render('mainLayout', {
+      navbar: 'navbarLayout',
+      mainContent: 'exportsContainer'
+    });
+  }
 });
 
 FlowRouter.route('/login', {
-    name: 'login',
-    action() {
-      BlazeLayout.render('loginContainer', {});
-    }
+  name: 'login',
+  action() {
+    BlazeLayout.render('mainLayout', {
+      navbar: 'navbarLayout',
+      mainContent: 'loginContainer'
+    });
+  }
 });
+
+
+
+// FlowRouter.route('/', {
+//     name: 'index',
+//     action() {
+//       BlazeLayout.render('mainContainer', {});
+//     }
+// });
+
+// FlowRouter.route('/exports', {
+//     name: 'exports',
+//     action() {
+//       BlazeLayout.render('exportsContainer', {});
+//     }
+// });
+
+// FlowRouter.route('/login', {
+//     name: 'login',
+//     action() {
+//       BlazeLayout.render('loginContainer', {});
+//     }
+// });
 
 
 

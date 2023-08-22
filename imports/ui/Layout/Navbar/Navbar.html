@@ -1,0 +1,17 @@
+<template name="navbarLayout">
+    <div class="nav-bar">
+        <a href="/">
+            <img src="https://assets.website-files.com/5f5b93c1e1c2efc64e306e42/616dbf6a64672f5f479f2917_logo.svg" alt="lempire logo" width="148">
+        </a>
+        <div class="navbar-button">
+          {{#if isUserLogged}}
+
+            {{getUser.username}} 
+            <div class="user">🚪</div>
+          {{else}}
+            <a href="/login">Login</a>
+          {{/if}}
+        </div>
+        
+    </div>
+</template>
