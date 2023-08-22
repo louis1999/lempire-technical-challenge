@@ -1,0 +1,22 @@
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+  }
+
+.user {
+    display: flex;
+
+    align-self: flex-end;
+
+    margin: 8px 16px 0;
+    font-weight: bold;
+}
+
+.export-form {
+    margin-top: 1rem;
+}
+  
+.error{
+    color:red;
+}
+  

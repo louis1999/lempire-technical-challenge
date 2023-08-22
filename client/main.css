@@ -5,113 +5,11 @@ body {
 }
 
 
-.export-form {
-  margin-top: 1rem;
-}
 
 
 
-.export-list-container{
-  width: 30vw;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-bar{
-  display: flex;
-  justify-content: space-between;
-}
-
-.user {
-  display: flex;
-
-  align-self: flex-end;
-
-  margin: 8px 16px 0;
-  font-weight: bold;
-}
-
-.error{
-  color:red;
-}
-
-
-.export-line{
-  width: 90%;
-}
-
-.export-line-content{
-  display: flex;
-  justify-content: space-between;
-}
-
-.title {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-width: 25%; /* Set your desired max width here */
-}
-
-.progress-bar {
-  width: 30%; /* Set the width of the progress bar container */
-  height: 14px; /* Set the height of the progress bar */
-  background-color: #f0f0f0; /* Background color of the progress bar container */
-  border-radius: 7px; /* Rounded corners for the progress bar */
-  overflow: hidden;
-}
-
-.progress-fill {
-  position: relative;
-  height: 100%; /* Full height of the progress bar */
-  background-color: #3498db; /* Color of the filled progress */
-  border-radius: 6px; /* Rounded corners for the progress fill */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.progression-percentage {
-  color: #ffffff; /* Color of the text */
-  font-size: 12px; /* Font size of the text */
-}
 
 
 
-/* LOGIN FORM */
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
 
-  justify-content: center;
-  align-items: center;
-}
-
-.login-form > div {
-  margin: 8px;
-}
-
-.login-form > div > label {
-  font-weight: bold;
-}
-
-.login-form > div  > input {
-  flex-grow: 1;
-  box-sizing: border-box;
-  padding: 10px 6px;
-  background: transparent;
-  border: 1px solid #aaa;
-  width: 100%;
-  font-size: 1em;
-  margin-right: 16px;
-  margin-top: 4px;
-}
-
-.login-form > div > input:focus {
-  outline: 0;
-}
-
-.login-form > div > button {
-  background-color: #62807e;
-}

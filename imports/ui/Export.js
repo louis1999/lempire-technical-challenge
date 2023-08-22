@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { ExportsCollection } from "../db/exports/ExportsCollection";
 
 import './Export.html';
+import './Export.css';
 
 
 

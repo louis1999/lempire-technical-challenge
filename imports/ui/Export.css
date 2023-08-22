@@ -1,0 +1,48 @@
+.export-list-container{
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+
+
+.export-line{
+    width: 90%;
+}
+  
+.export-line-content{
+    display: flex;
+    justify-content: space-between;
+}
+  
+.title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 25%; /* Set your desired max width here */
+}
+  
+.progress-bar {
+    width: 30%; /* Set the width of the progress bar container */
+    height: 14px; /* Set the height of the progress bar */
+    background-color: #f0f0f0; /* Background color of the progress bar container */
+    border-radius: 7px; /* Rounded corners for the progress bar */
+    overflow: hidden;
+}
+  
+.progress-fill {
+    position: relative;
+    height: 100%; /* Full height of the progress bar */
+    background-color: #3498db; /* Color of the filled progress */
+    border-radius: 6px; /* Rounded corners for the progress fill */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.progression-percentage {
+    color: #ffffff; /* Color of the text */
+    font-size: 12px; /* Font size of the text */
+}
+    

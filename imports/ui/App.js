@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { ExportsCollection } from "../db/exports/ExportsCollection";
 import { ReactiveDict } from 'meteor/reactive-dict';
 
+import './App.css'
 import './App.html';
 import './Export.js';
 import './Login.js'
