@@ -95,8 +95,10 @@
     padding:30px;
 }
 .img-block-text {
+
     z-index: 4;
     width: 60%;
+    text-align: center;
     margin-bottom: 40px;
     margin-left: auto;
     margin-right: auto;
@@ -109,10 +111,50 @@
     padding-right: 15px;
 }
 
-.lemport-title{
+
+.cta-export-button{
+    width: 30%;
+    margin:auto;
+    box-shadow: 0 8px 34px rgba(49,107,255,.5);
+
+}
+
+.cta{
+    color: #fff;
+    background-color: #316bff;
+    border-radius: 10px;
+    padding: 0;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.cta-export-button :hover{
+    cursor: pointer;
+}
+
+.cta :hover{
+    background-color: #316bff;
+    opacity: 0.8;
 }
 
 
+.cta-export{
+    text-align: center;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: #316bff;
+    background-image: radial-gradient(circle at 50% 240%,rgba(255,255,255,.5),rgba(255,255,255,0));
+    border: 2px solid rgba(255,255,255,.25);
+    border-radius: 9px;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    transition: all .3s;
+    display: flex;
+}
+.cta-export :hover{
+
+}
 
 
 
