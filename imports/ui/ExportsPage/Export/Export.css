@@ -1,5 +1,6 @@
 .export-list-container{
-    width: 30vw;
+    padding-top: 25px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -25,7 +26,6 @@
   
 .progress-bar {
     width: 30%; /* Set the width of the progress bar container */
-    height: 14px; /* Set the height of the progress bar */
     background-color: #f0f0f0; /* Background color of the progress bar container */
     border-radius: 7px; /* Rounded corners for the progress bar */
     overflow: hidden;

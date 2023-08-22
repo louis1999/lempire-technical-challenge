@@ -1,4 +1,20 @@
 
+
+
+.export-form {
+    display: flex;
+}
+.error{
+    color:red;
+}
+  
+
+.add-export-button{
+    padding-left: 15px;
+}
+
+
+
 .nav-bar {
 
     display: flex;
