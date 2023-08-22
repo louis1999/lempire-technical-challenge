@@ -10,31 +10,46 @@
     <div class="container">
         {{#if isUserLogged}}
             <div class="nav-bar">
-                <header>
-                    <h1>My Export List</h1>
-                </header>
-                <div class="user">
-                    {{getUser.username}} 🚪
+                <a href="/">
+                    <img src="https://assets.website-files.com/5f5b93c1e1c2efc64e306e42/616dbf6a64672f5f479f2917_logo.svg" alt="lempire logo" width="148">
+                </a>
+                <div class="navbar-button">
+                    {{getUser.username}} 
+                    <div class="user">🚪</div>
                 </div>
                 
             </div>
 
-            <div>
-                <h3>
-                    Total Exports: {{exportsCount}}
-                </h3>
-                <br/>
-                {{> form }}
-                <ul>
-                    {{#each exports}}
+            <div class="img-block">
+                <header>
+                    <div class="lemport-logo">
+                        <img src="/images/black_lemport_logo.png" width="50"/> 
+                    </div>
+                    <div class="lemport-title">
+                        <h1 >Lemport</h1>
+                    </div>
+                </header>
+                <div class="img-block-content">
+                    <div class="img-block-text">
+                        Export your files. Anywhere. Anytime.
+                    </div>
+
+                    <h3>
+                        Total Exports: {{exportsCount}}
+                    </h3>
+                    <br/>
+                    {{> form }}
+                    <ul>
+                        {{#each exports}}
                         {{> export}}
-                    {{/each}}   
-
-
-                    {{#if isLoading}}
+                        {{/each}}   
+                        
+                        
+                        {{#if isLoading}}
                         <div >loading...</div>
-                    {{/if}}
-                </ul>
+                        {{/if}}
+                    </ul>
+                </div>
             </div>
 
             
