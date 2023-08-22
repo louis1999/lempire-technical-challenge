@@ -1,11 +1,24 @@
 <template name="export">
     <div class="export-list-container">
-        <li>
-            {{title}} - {{progression}}% - 
-            {{#if url}}
-                <a href={{url}} target="_blank">{{url}}</a>
-            {{/if}}
-
+        <li class="export-line">
+            <div class="export-line-content">
+                <b class="title">
+                    {{title}} 
+                </b>
+                {{#if url}}
+                    <div>
+                        <a href={{url}} target="_blank">{{url}}</a>
+                    </div>
+                {{else}}
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{progression}}%;">
+                            <div class="progression-percentage">
+                                {{progression}}%
+                            </div>
+                        </div>
+                    </div>
+                {{/if}}
+            </div>
         </li>
         <div>
             <button class="delete">&times;</button>
