@@ -1,0 +1,67 @@
+<body>
+    {{> mainContainer}}
+</body>
+
+
+<!-- TODO : some improvement is to creater a router and have a login page/route for unsigned user -->
+
+<template name="mainContainer">
+
+    <div class="container">
+        {{#if isUserLogged}}
+            <div class="nav-bar">
+                <header>
+                    <h1>My Export List</h1>
+                </header>
+                <div class="user">
+                    {{getUser.username}} 🚪
+                </div>
+                
+            </div>
+
+            <div>
+                <h3>
+                    Total Exports: {{exportsCount}}
+                </h3>
+                <br/>
+                {{> form }}
+                <ul>
+                    {{#each exports}}
+                        {{> export}}
+                    {{/each}}   
+
+
+                    {{#if isLoading}}
+                        <div class="loading">loading...</div>
+                    {{/if}}
+                </ul>
+            </div>
+
+            
+
+        {{else}}
+
+
+            {{> login }}
+
+
+        {{/if}}
+
+    </div>
+
+</template>
+
+
+
+
+<template name="form">
+    <form class="export-form">
+        <input type="text" name="title" placeholder="Type to add new exports" />
+        <button type="submit">Add Export</button>
+    </form>
+    {{#if error}}
+      <div class="error">{{error}}</div>
+    {{/if}}
+
+
+</template>

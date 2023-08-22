@@ -1,0 +1,15 @@
+<template name="export">
+    <div class="export-list-container">
+        <li>
+            {{title}} - {{progression}}% - 
+            {{#if url}}
+                <a href={{url}} target="_blank">{{url}}</a>
+            {{/if}}
+
+        </li>
+        <div>
+            <button class="delete">&times;</button>
+        </div>
+           
+    </div>
+</template>
