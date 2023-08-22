@@ -4,6 +4,8 @@ Challenge technique pour Lempire
 
 
 
+To install the packages :
+meteor npm install
 
 To run the app :
 meteor

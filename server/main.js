@@ -43,17 +43,17 @@ Meteor.startup(() => {
   // ExportsCollection.remove({});
 
   
-  if (ExportsCollection.find().count() === 0) {
-    [
-      'First Export',
-      'Second Export',
-      'Third Export',
-      'Fourth Export',
-      'Fifth Export',
-      'Sixth Export',
-      'Seventh Export'
-    ].forEach(exportTitle => insertExport(exportTitle, 0, user, null));
-  }
+  // if (ExportsCollection.find().count() === 0) {
+  //   [
+  //     'First Export',
+  //     'Second Export',
+  //     'Third Export',
+  //     'Fourth Export',
+  //     'Fifth Export',
+  //     'Sixth Export',
+  //     'Seventh Export'
+  //   ].forEach(exportTitle => insertExport(exportTitle, 0, user, null));
+  // }
 
   // some data for seco,nd user
   // ['meteor2 export'].forEach(exportTitle => insertExport(exportTitle, 0, user2))
