@@ -3,6 +3,8 @@ import { Template } from 'meteor/templating';
 import './Login.html';
 import './Login.css';
 
+
+
 Template.login.events({
   'submit .login-form'(e) {
     e.preventDefault();
@@ -11,7 +13,6 @@ Template.login.events({
 
     const username = target.username.value;
     const password = target.password.value;
-
     Meteor.loginWithPassword(username, password);
   }
 });

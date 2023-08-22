@@ -27,3 +27,6 @@ accounts-password
 reactive-dict
 meteortesting:mocha
 quave:testing
+ostrio:flow-router-extra
+kadira:blaze-layout
+iron:router
