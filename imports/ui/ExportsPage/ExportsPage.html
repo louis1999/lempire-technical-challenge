@@ -21,19 +21,31 @@
                   </div>
               </header>
 
-              
               <div class="img-block-content">
                   {{#if isUserLogged}}
-                  
-                    
-                    <h3>
+                    <!-- <h3>
                         Total Exports: {{exportsCount}}
-                    </h3>
+                    </h3> -->
+             
+                    
+
+                    <div class="export-buttons">
+                      <button class="{{#if exportFilesIsActive}}selected left{{else}}not-selected left{{/if}}" value="exportFiles">Export files</button>
+                      <button class="{{#if exportFilesIsActive}}not-selected right{{else}}selected right{{/if}}" value="exportFakeFile">Export fake file</button>
+                    </div>
                     <br/>
-                    {{> form-for-files}}
+
+                    {{#if exportFilesIsActive}}
+                      {{> form_for_files}}
+                    {{else}}
+                      {{> form}}
+                    {{/if}}
+
+                    <!-- {{> form_for_files }}
                     <br/>
-                    {{> form }}
+                    {{> form }} -->
                     <ul>
+                      <!-- TODO: improvement for Louis, make a pagination to make a better ui/ux when there are many exports -->
                         {{#each exports}}
                         {{> export}}
                         {{/each}}   
@@ -58,12 +70,56 @@
 </template>
 
 
-<template name="form-for-files">
-  <form>
-    <input type="file" name="files">
-    <input type="submit">
-  </form>
+<template name="form_for_files">
+  <div class="form-for-files">
+    <form >
+      <!-- CREDIT /icons/export.png is coming from icons8 -->
+      <input type="file" name="file" id="file" class="inputfile"  multiple/>
+      <label for="file" >
+        <div class="input-files-label-content">
+          <img src="/icons/export.png"/>
+          <div class="input-files-label-text">
+            Choose files
+          </div>
+        </div>
+      </label>
+      <div> 
+        {{# if selectedFileNames}}
+          {{selectedFileNames.length}} files selected
+        {{/if}}
+      </div>
+    </form>
+    <!-- {{selectedFileNames.length}} -->
+  
+    {{# if selectedFileNames}}
+      <div>
+        <div class="file-list-card">
+          <div class="file-list ">
+            {{#each selectedFileNames}}
+            <p class="file-item">{{this}}</p>
+            {{/each}}
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="export-files-submit-button">
+          <div class="export-files-button">
+            Export files
+          </div>
+        </button>
+      </div>
+    {{/if}}
+  </div>
+
+
+  {{#if error}}
+    <div class="error">{{error}}</div>
+  {{/if}}
+  {{#each error_files_exist}}
+    <div class="error">{{this}}</div>
+  {{/each}}
 </template>
+
 
 <template name="form">
   <form class="export-form">
@@ -75,4 +131,5 @@
   {{#if error}}
     <div class="error">{{error}}</div>
   {{/if}}
+
 </template>

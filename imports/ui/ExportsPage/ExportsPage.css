@@ -1,4 +1,107 @@
 
+.form-for-files{
+    display: flex;
+    justify-content: space-around;
+}
+
+.file-list {
+    max-height: 70px;
+    overflow: auto;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+.file-item {
+    margin: 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+.file-item:last-child {
+    border-bottom: none;
+}
+.export-files-button{
+    padding: 10px 20px;
+    font-size: large;
+}
+
+/* css for input file from : https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/ */
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    border:1px white solid;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.input-files-label-content{
+    padding:10px 40px;
+    display: flex;
+}
+.input-files-label-text{
+    padding-top: 11px;
+    padding-left: 5px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    box-shadow: 0 8px 16px rgba(256, 256, 256, 0.4);
+}
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+
+
+
+.export-buttons{
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    padding: 5px 5px;
+    border-radius: 10px;
+    border:1px solid #007bff;
+}
+.selected {
+    width: 49%;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: underline;
+  }
+.not-selected {
+    width: 49%;
+    background-color: #fff;
+    color: #007bff;
+    border:1px solid #007bff;
+}
+.left {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  
+  .right {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+
+
+.error-files{
+    color:red;
+}
 
 
 .export-form {
@@ -105,7 +208,8 @@
     padding-top: 15px;
     padding-right: 15px;
 }
-
+.lemport-title{
+}
 
 .cta-export-button{
     width: 30%;

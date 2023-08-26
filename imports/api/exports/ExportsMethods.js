@@ -14,7 +14,69 @@ import { ExportsCollection } from '../../db/exports/ExportsCollection';
 
 
 Meteor.methods({
+    'exports.insert_list'(list){
+      if (!this.userId) {
+        throw new Meteor.Error('Not authorized.');
+      }
 
+      let doublon_array = []
+
+      // loop threw all the elements of the list
+      list.forEach(title => {
+        // check if element is a string
+        check(title, String);
+        // check if the title is already present in the collection, if yes, add it to the error array and do not throw an error
+        const existingExport = ExportsCollection.findOne({ title, userId: this.userId });
+        if (existingExport) {
+          doublon_array.push(title + " export already exists")
+        }else{
+          // insert the export
+          const exportId = ExportsCollection.insert({
+            title,
+            progression: 0,
+            createdAt: new Date(),
+            userId: this.userId,
+          });
+          // increment progression function
+
+          const incrementProgression = (exportId) => {
+            ExportsCollection.update(
+              { _id: exportId },
+              { $inc: { progression: 5 } } // increment by 5 the progression with "$inc"
+            );
+    
+            const exp = ExportsCollection.findOne(exportId);
+    
+            if (exp.progression < 100) {
+              // Continue incrementing if progression is not yet 100
+              Meteor.setTimeout(() => incrementProgression(exportId), 1000); // recursion to launch again the function every one sec (if progression<100 )
+            }else{
+              // when we arrive at 100% of progression, we have to update the url
+              const urls = [
+                "https://www.lempire.com/",
+                "https://www.lemlist.com/",
+                "https://www.lemverse.com/",
+                "https://www.lemstash.com/" // TODO this url is not working
+              ];
+              const randomIndex = Math.floor(Math.random() * urls.length);
+              const randomUrl = urls[randomIndex];
+              ExportsCollection.update(
+                { _id: exportId },
+                { $set: { url: randomUrl } } // update an attribute wiht "$set"
+              );
+            }
+          };
+          // call update progression
+          Meteor.setTimeout(() => incrementProgression(exportId), 1000);
+        }
+      });
+
+        
+
+      return doublon_array
+
+
+    },
     'exports.insert'(title) {
       check(title, String); // TODO RECOMMANDATION : recommend that you change your check calls for wrong types to produce some errors, then you can understand what will happen in these cases as well.
 
