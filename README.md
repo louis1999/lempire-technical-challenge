@@ -15,7 +15,7 @@ La page login ("/login") permet de se connecter aux comptes 2 pré existants : "
 
 # Améliorations faites depuis la soumission du challenge
 * Amélioration du design
-* Création des exports via un html input files. Séparation de la page entre "Export files" et "Export fake file". Création de exports.insert_list en backend pour exporter plusieurs éléments à la fois
+* Création des exports via un html input files. Séparation de la page exports entre "Export files" et "Export fake file". Création de exports.insert_list en backend pour exporter plusieurs éléments à la fois
 
 
 # Commandes 
