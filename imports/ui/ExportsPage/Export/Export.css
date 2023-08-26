@@ -5,7 +5,15 @@
     justify-content: space-between;
   }
   
-  
+
+  .url-export{
+  }
+  .url-export a{
+    text-decoration:none;
+    color:white;
+
+  }
+
 
 
 .export-line{
