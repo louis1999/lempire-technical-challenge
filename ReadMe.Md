@@ -2,7 +2,7 @@
 Challenge technique pour Lempire
 
 
-# Descriptioin
+# Description
 Lemport est un outil pour faire des exports.
 
 Chaque utilisateurs peut enregistrer des exports et à la fin de ceux-ci il obtiendra un lien personnalisé.

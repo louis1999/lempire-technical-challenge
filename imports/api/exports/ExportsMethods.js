@@ -105,7 +105,7 @@ Meteor.methods({
 
         const exp = ExportsCollection.findOne(exportId);
 
-        if (exp.progression < 100) {
+        if (exp && exp.progression < 100) {
           // Continue incrementing if progression is not yet 100
           Meteor.setTimeout(() => incrementProgression(exportId), 1000); // recursion to launch again the function every one sec (if progression<100 )
         }else{
