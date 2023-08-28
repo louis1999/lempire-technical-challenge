@@ -1,0 +1,83 @@
+
+
+
+
+
+<template name="registrationContainer">
+    
+
+    <div class="container">
+        <div class="img-block-card">
+
+            <div class="img-block">
+                <header>
+                    <div class="lemport-logo">
+                        <img src="/images/black_lemport_logo.png" width="50"/> 
+                    </div>
+                    <div class="lemport-title">
+                        <h1 >Register</h1>
+                    </div>
+                </header>
+                <div class="img-block-content">
+                    {{#if isUserLogged}}
+                        <div>
+                            You are already Logged in
+                        </div>
+                    {{else}}
+                        <div>
+                            {{> registration }}
+                        </div>
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</template>
+
+
+<template name="registration">
+    <form class="registration-form">
+        <div class="form-group">
+            <label htmlFor="username">Username</label>
+            <input
+            type="text"
+            placeholder="Username"
+            
+            name="username"
+            required
+            />
+        </div>
+        
+        <div class="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+            />
+        </div>
+
+        <div class="form-group">
+            <label htmlFor="password">Password confirmation</label>
+            <input
+            type="password"
+            placeholder="confirmation"
+            name="password_confirmation"
+            required
+            />
+        </div>
+        <div class="error">
+            {{error}}
+        </div>
+        
+        <div class="form-group">
+            <button type="submit">Sign up</button>
+        </div>
+    </form>
+</template>

@@ -15,12 +15,12 @@ Template.login.events({
 
   'submit .login-form'(event) {
     event.preventDefault();
-
     const target = event.target;
 
     const username = target.username.value;
     const password = target.password.value;
-    Meteor.loginWithPassword(username, password);
+
+    // INFORMATION FOR LOUIS: not necessary to move to the backend for Meteor.loginWithPassword
     Meteor.loginWithPassword(username, password, (error) => {
       if (error) {
         console.log("Login error:", error.reason);

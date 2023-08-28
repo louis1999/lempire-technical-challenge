@@ -11,11 +11,12 @@ La home page ("/") sert de présentation du produit
 
 La page exports ("/exports") est la page où on peut faire ses exportations
 
-La page login ("/login") permet de se connecter aux comptes 2 pré existants : "meteorite" et "meteorite2" en username & "password" pour le mot de passe. Ces 2 comptes n'ont aucun export lors de la première connexion. À vous d'en ajouter.
+La page login ("/login") permet de se connecter aux comptes 2 pré existants : "meteorite" et "meteorite2" en username & "password" pour le mot de passe. Ces 2 comptes n'ont aucun export lors de la première connexion. Pour créer son propre compte, la page "/registration" est désormais disponible.
 
 # Améliorations faites depuis la soumission du challenge
 * Amélioration du design
-* Création des exports via un html input files. Séparation de la page entre "Export files" et "Export fake file". Création de exports.insert_list en backend pour exporter plusieurs éléments à la fois
+* Création des exports via un html input files. Séparation de la page exports entre "Export files" et "Export fake file". Création de exports.insert_list en backend pour exporter plusieurs éléments à la fois
+* Ajout de la page "/registration" pour créer son propre compte. Pas d'ajout en backend ou db, Meteor gère tout pour nous.
 
 
 # Commandes 

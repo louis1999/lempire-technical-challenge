@@ -16,6 +16,9 @@ import '../imports/ui/ExportsPage/Export/Export.html'
 import '../imports/ui/ExportsPage/Export/Export.js'
 import '../imports/ui/ExportsPage/Export/Export.css'
 import '../imports/ui/LoginPage/LoginPage.html'
+import '../imports/ui/RegistrationPage/RegistrationPage.html'
+import '../imports/ui/RegistrationPage/RegistrationPage.css'
+import '../imports/ui/RegistrationPage/RegistrationPage.js'
 import '../imports/ui/LoginPage/LoginPage.css'
 import '../imports/ui/LoginPage/LoginPage.js'
 import '../imports/ui/LoginPage/Login/Login.html'
@@ -60,6 +63,17 @@ FlowRouter.route('/login', {
     });
   }
 });
+
+FlowRouter.route('/registration', {
+  name: 'registration',
+  action() {
+    BlazeLayout.render('mainLayout', {
+      navbar: 'navbarLayout',
+      mainContent: 'registrationContainer'
+    });
+  }
+});
+
 
 
 
