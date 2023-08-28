@@ -21,6 +21,38 @@ Meteor.methods({
 
       let doublon_array = []
 
+      // increment progression function
+
+      const incrementProgression = (exportId) => {
+        ExportsCollection.update(
+          { _id: exportId },
+          { $inc: { progression: 5 } } // increment by 5 the progression with "$inc"
+        );
+
+        const exp = ExportsCollection.findOne(exportId);
+
+        if (exp && exp.progression < 100) {
+          // Continue incrementing if progression is not yet 100
+          Meteor.setTimeout(() => incrementProgression(exportId), 1000); // recursion to launch again the function every one sec (if progression<100 )
+        }else{
+          // when we arrive at 100% of progression, we have to update the url
+          const urls = [
+            "https://www.lempire.com/",
+            "https://www.lemlist.com/",
+            "https://www.lemverse.com/",
+            "https://www.lemstash.com/" // TODO this url is not working
+          ];
+          const randomIndex = Math.floor(Math.random() * urls.length);
+          const randomUrl = urls[randomIndex];
+          ExportsCollection.update(
+            { _id: exportId },
+            { $set: { url: randomUrl } } // update an attribute wiht "$set"
+          );
+        }
+      };
+
+      
+
       // loop threw all the elements of the list
       list.forEach(title => {
         // check if element is a string
@@ -37,35 +69,7 @@ Meteor.methods({
             createdAt: new Date(),
             userId: this.userId,
           });
-          // increment progression function
-
-          const incrementProgression = (exportId) => {
-            ExportsCollection.update(
-              { _id: exportId },
-              { $inc: { progression: 5 } } // increment by 5 the progression with "$inc"
-            );
-    
-            const exp = ExportsCollection.findOne(exportId);
-    
-            if (exp && exp.progression < 100) {
-              // Continue incrementing if progression is not yet 100
-              Meteor.setTimeout(() => incrementProgression(exportId), 1000); // recursion to launch again the function every one sec (if progression<100 )
-            }else{
-              // when we arrive at 100% of progression, we have to update the url
-              const urls = [
-                "https://www.lempire.com/",
-                "https://www.lemlist.com/",
-                "https://www.lemverse.com/",
-                "https://www.lemstash.com/" // TODO this url is not working
-              ];
-              const randomIndex = Math.floor(Math.random() * urls.length);
-              const randomUrl = urls[randomIndex];
-              ExportsCollection.update(
-                { _id: exportId },
-                { $set: { url: randomUrl } } // update an attribute wiht "$set"
-              );
-            }
-          };
+          
           // call update progression
           Meteor.setTimeout(() => incrementProgression(exportId), 1000);
         }
